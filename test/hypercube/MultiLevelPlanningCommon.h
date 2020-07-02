@@ -23,6 +23,8 @@
 #include <ompl/geometric/planners/multilevel/QRRTStar.h>
 #include <ompl/geometric/planners/multilevel/QMP.h>
 #include <ompl/geometric/planners/multilevel/QMPStar.h>
+#include <ompl/geometric/planners/multilevel/ExplorerTest.h>
+
 #include <ompl/geometric/planners/multilevel/SPQR.h>
 #include <ompl/geometric/planners/rrt/BiTRRT.h>
 #include <ompl/geometric/planners/rrt/InformedRRTstar.h>

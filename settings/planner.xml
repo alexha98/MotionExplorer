@@ -1,7 +1,7 @@
 <!-- Default Planner Settings -->
 <planner>
 
-  <!-- <algorithm dynamic="1" name="hierarchy:explorer"/> -->
+  <algorithm dynamic="1" name="hierarchy:explorertest"/>
   <algorithm dynamic="1" name="hierarchy:qrrt"/>
   <algorithm dynamic="1" name="ompl:dynamic:rrt"/>
   <algorithm dynamic="1" name="ompl:dynamic:sst"/>
@@ -15,6 +15,7 @@
   <!-- <algorithm name="hierarchy:sampler"/> -->
   <!-- <algorithm name="benchmark:minimal"/> -->
 
+<algorithm name="hierarchy:explorertest"/>
   <algorithm name="hierarchy:qrrt"/>
   <algorithm name="hierarchy:qrrtstar"/>
   <algorithm name="hierarchy:qmpstar"/>

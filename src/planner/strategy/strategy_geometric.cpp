@@ -10,6 +10,8 @@
 #include <ompl/geometric/planners/multilevel/QMP.h>
 #include <ompl/geometric/planners/multilevel/QMPStar.h>
 #include <ompl/geometric/planners/multilevel/SPQR.h>
+#include <ompl/geometric/planners/multilevel/ExplorerTest.h>
+
 
 #include <ompl/geometric/planners/rrt/RRT.h>
 #include <ompl/geometric/planners/rrt/pRRT.h>
@@ -144,6 +146,8 @@ ob::PlannerPtr StrategyGeometricMultiLevel::GetPlanner(std::string algorithm,
   else if(algorithm=="hierarchy:qmp") planner = std::make_shared<og::QMP>(siVec, "QMP");
   else if(algorithm=="hierarchy:qmpstar") planner = std::make_shared<og::QMPStar>(siVec, "QMPStar");
   else if(algorithm=="hierarchy:spqr") planner = std::make_shared<og::SPQR>(siVec, "SPQR");
+  else if(algorithm=="hierarchy:explorertest") planner = std::make_shared<og::ExplorerTest>(siVec, "ExplorerTest");
+
 
   else if(algorithm=="hierarchy:explorer") planner = std::make_shared<og::MotionExplorer>(siVec, "Explorer");
   else if(algorithm=="sampler") planner = std::make_shared<og::InfeasibilitySampler>(si);

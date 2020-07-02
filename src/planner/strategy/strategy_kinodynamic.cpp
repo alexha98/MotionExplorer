@@ -4,6 +4,7 @@
 #include "util.h"
 
 #include <ompl/geometric/planners/explorer/Explorer.h>
+#include <ompl/geometric/planners/multilevel/ExplorerTest.h>
 #include <ompl/geometric/planners/multilevel/QRRT.h>
 #include <ompl/geometric/planners/multilevel/QRRTStar.h>
 #include <ompl/geometric/planners/multilevel/QMP.h>
@@ -101,6 +102,8 @@ ob::PlannerPtr StrategyKinodynamicMultiLevel::GetPlanner(std::string algorithm,
     planner = std::make_shared<og::QMP>(si_vec);
   }else if(algorithm=="hierarchy:qmpstar"){
     planner = std::make_shared<og::QMPStar>(si_vec);
+  }else if(algorithm=="hierarchy:explorertest"){
+      planner = std::make_shared<og::ExplorerTest>(si_vec);
   }else if(algorithm=="hierarchy:spqr"){
     planner = std::make_shared<og::SPQR>(si_vec);
   }else if(algorithm=="optimizer"){
