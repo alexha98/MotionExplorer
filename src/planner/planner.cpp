@@ -8,6 +8,7 @@
 #include "gui/drawMotionPlanner.h"
 #include "util.h"
 #include <ompl/geometric/planners/explorer/Explorer.h>
+#include <ompl/geometric/planners/multilevel/ExplorerTest.h>
 
 #include <boost/lexical_cast.hpp>
 
@@ -594,8 +595,15 @@ void MotionPlanner::setSelectedPath(std::vector<int> selectedLocalMinimum)
 {
     //can only be done with Explorer Planners
     auto selectionPlanner = dynamic_pointer_cast<og::MotionExplorer>(strategy->GetPlannerPtr());
+
+    auto selectionPlannerTest = dynamic_pointer_cast<og::ExplorerTest>(strategy->GetPlannerPtr());
+
+
     if(selectionPlanner != NULL){
       selectionPlanner->setLocalMinimumSelection( selectedLocalMinimum );
+    }
+    if(selectionPlannerTest != NULL){
+        selectionPlannerTest->setLocalMinimumSelection( selectedLocalMinimum );
     }
 }
 void MotionPlanner::Print()
